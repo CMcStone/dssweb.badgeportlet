@@ -18,12 +18,16 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
-
+    <permission
+        id="dssweb.badgeportlet.AddBadgePortlet"
+        title="dssweb.badgeportlet: Add badge portlet"
+        />
 	    
    <plone:portlet
           name="dssweb.badgeportlet"
           interface=".badgeportlet.IPersonBadgePortlet"
           assignment=".badgeportlet.Assignment"
+		edit_permission="dssweb.badgeportlet.AddBadgePortlet"
           view_permission="zope2.View"
           renderer=".badgeportlet.Renderer"
           addview=".badgeportlet.AddForm"
