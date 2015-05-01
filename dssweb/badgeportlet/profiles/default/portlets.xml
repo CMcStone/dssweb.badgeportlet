@@ -5,7 +5,7 @@
   -->
 <portlets
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="plone">
+    i18n:domain="dssweb">
 	<!-- -*- extra stuff goes here -*- -->
 
    <!-- to have your portlet's title and description translated in
