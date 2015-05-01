@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master">
+
+    <metal:css fill-slot="style_slot">
+        <style>
+        .portlet-info {
+            margin: 1em 0;
+            padding: 1em 0;
+            background: #eee;
+        }
+
+        .portlet-info td,
+        .portlet-info th {
+            vertical-align: top;
+            background: #eee;
+        }
+
+       .portlet-info th {
+            padding-right: 0.5em;
+       }
+
+       #content h3 {
+            margin: 0 0 0.5em 0;
+       }
+        </style>
+    </metal:css>
+
+    <metal:block fill-slot="content-core">
+        
+            
+        </div>
+    </metal:block>
+
+</html>
