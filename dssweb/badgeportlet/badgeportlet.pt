@@ -1,37 +1,32 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="context/main_template/macros/master">
+<div tal:condition="view/data/omit_border"
+     tal:attributes="class string:portletStaticText ${view/css_class}"
+     tal:content="structure view/transformed" />
 
-    <metal:css fill-slot="style_slot">
-        <style>
-        .portlet-info {
-            margin: 1em 0;
-            padding: 1em 0;
-            background: #eee;
-        }
+<section tal:condition="not:view/data/omit_border"
+    tal:attributes="class string:portlet portletStaticText ${view/css_class}"
+    i18n:domain="plone">
 
-        .portlet-info td,
-        .portlet-info th {
-            vertical-align: top;
-            background: #eee;
-        }
+    <header class="portletHeader"
+        tal:define="header view/data/header"
+        tal:attributes="class python:header and 'portletHeader' or 'portletHeader titleless'">
+           <a class="tile"
+              tal:condition="header"
+              tal:omit-tag="not:view/has_link"
+              tal:attributes="href view/data/more_url"
+              tal:content="header"
+              />
+    </header>
 
-       .portlet-info th {
-            padding-right: 0.5em;
-       }
+    <section class="portletContent">
+        <div tal:replace="structure view/transformed" />
+    </section>
+    
+    <footer class="portletFooter" tal:condition="view/has_footer">
+           <a class="tile"
+              tal:omit-tag="not:view/has_link"
+              tal:attributes="href view/data/more_url"
+              tal:content="view/data/footer"
+              />
+    </footer>
 
-       #content h3 {
-            margin: 0 0 0.5em 0;
-       }
-        </style>
-    </metal:css>
-
-    <metal:block fill-slot="content-core">
-        
-            
-       
-    </metal:block>
-
-</html>
+</section>
